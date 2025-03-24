@@ -11,15 +11,7 @@ main:has(#wrapper) {
   #wrapper {
     width: 100%;
     max-width: 964px;
-    position: relative;
-
-
-
-
-
-
-
-    
+    position: relative;    
   }
   
   #carousel {
@@ -70,6 +62,6 @@ main:has(#wrapper) {
   .item {
     width: 180px;
     height: 180px;
-    background: green;
+    background: rgb(72, 72, 72); /** Couleur de fond des items sans image **/
   }
   

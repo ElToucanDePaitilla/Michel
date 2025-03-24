@@ -1,6 +1,6 @@
 .a-propos {
     background-color: rgb(255, 255, 255);
-    color: rgb(35, 35, 35);
+    color: rgb(0, 0, 0);
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 22px;
     font-style: italic;
@@ -20,4 +20,8 @@
 .auteur {
     font-size: 22px;
     font-style: normal;
+}
+
+body {
+    background-color: white !important;
 }
