@@ -1,0 +1,148 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    box-shadow: 1px 1px 10px #88888863;   
+}
+
+.logo {
+    margin: 10px 0 10px 100px;   
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo a:hover {
+  cursor: pointer;
+}
+
+.logo a:visited {
+  color: rgb(0, 0, 0);
+}
+
+.logo-nom {
+    margin-top: 10px;
+    font-family: "EB Garamond", serif;
+    letter-spacing: 15px;
+    font-size: 20px;
+    margin: 10px 0 10px 100px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.logo-slogan {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 5px;
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 10px 0 10px 100px;
+    text-decoration: none;
+}
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+    list-style-type: none;
+    margin: 25px 150px 0 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: right;
+  }
+  
+
+button .dopdown {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  list-style-type: none;
+  margin: 25px 150px 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+  li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    color: #afafaf;
+  }
+
+  li a[href*="login"] {
+    margin-left: 100px;
+  }
+ 
+  li a[href*="login"]:hover {
+    color: red;
+  }
+
+  /* Styles pour le menu déroulant */
+
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .navbar a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: right;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: inherit;  
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    padding: 14px 16px;
+    background-color: inherit;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0);
+    color: #afafaf;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

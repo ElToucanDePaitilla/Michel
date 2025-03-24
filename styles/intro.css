@@ -1,0 +1,75 @@
+
+        /* Fullscreen background avec disparition après 3s */
+        .fullscreen-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('../images/intro.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 100;
+            animation: fadeOut 1s ease-in-out 4s forwards;
+        }
+
+        .fullscreen-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Fond noir 30% */
+        }
+
+        /* Texte centré avec animation */
+        .titre-intro {
+            text-align: center;
+            color: white;
+            font-family: "EB Garamond", serif;
+            letter-spacing: 15px;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            border: 1px solid white;
+            padding: 0px 50px 20px 50px;
+
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 0.3s forwards;
+        }
+
+        .titre-intro p {
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 10px;
+            font-size: 14px;
+            font-weight: lighter;
+
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 0.3s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+   

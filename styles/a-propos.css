@@ -1,0 +1,23 @@
+.a-propos {
+    background-color: rgb(255, 255, 255);
+    color: rgb(35, 35, 35);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 35px;
+    margin: 80px 100px 100px 100px;
+}
+
+.a-propos p {
+    text-align: justify;
+}
+
+.citation {
+    text-align: center !important;
+    font-size: 30px;
+}
+
+.auteur {
+    font-size: 22px;
+    font-style: normal;
+}

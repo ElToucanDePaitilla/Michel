@@ -1,0 +1,225 @@
+@keyframes tonext {
+    75% { left: 0; }
+    95% { left: 100%; }
+    98% { left: 100%; }
+    99% { left: 0; }
+}
+
+@keyframes tostart {
+    75% { left: 0; }
+    95% { left: -300%; }
+    98% { left: -300%; }
+    99% { left: 0; }
+}
+
+@keyframes snap {
+    96% { scroll-snap-align: center; }
+    97% { scroll-snap-align: none; }
+    99% { scroll-snap-align: none; }
+    100% { scroll-snap-align: center; }
+}
+
+* {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+
+* {
+    -ms-overflow-style: none;
+}
+
+ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fond totalement transparent pour le carrousel */
+.carousel {
+    position: relative;
+    margin-top: 30px;
+    height: 70vh; /* Définit la hauteur à 70% de l'écran */
+    filter: drop-shadow(0 0 0px #0003);
+    perspective: 100px;
+    background-color: transparent; /* Supprime tout fond */
+}
+
+.carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    height: 100%; /* Assurez-vous que le viewport prend toute la hauteur du carousel */
+    background-color: transparent; /* Supprime tout fond */
+}
+
+.carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche l'image de dépasser */
+    background-color: transparent; /* Supprime tout fond */
+}
+
+.carousel__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Assure que l'image reste entière sans être rognée */
+}
+
+/* Supprime les fonds colorés des slides */
+.carousel__slide:nth-child(even) {
+    background-color: transparent;
+}
+
+/* Supprime les numéros sur les slides */
+.carousel__slide:before {
+    content: none;
+}
+
+/* Supprime les animations inutiles */
+.carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+
+/* Animation des slides */
+@media (hover: hover) {
+    .carousel__snapper {
+        animation-name: tonext, snap;
+        animation-timing-function: ease;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    .carousel__slide:last-child .carousel__snapper {
+        animation-name: tostart, snap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+        animation-name: none;
+    }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+    animation-name: none;
+}
+
+/* Alignement des boutons de navigation au centre verticalement */
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%); /* Ajuste au centre parfait */
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+}
+
+/* Positionnement des flèches */
+.carousel::before,
+.carousel__prev {
+    left: 1rem; /* Distance depuis le bord gauche */
+}
+
+.carousel::after,
+.carousel__next {
+    right: 1rem; /* Distance depuis le bord droit */
+}
+
+/* Supprime les fonds des flèches */
+.carousel::before,
+.carousel::after {
+    content: '';
+    z-index: 1;
+    background-size: 20px 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+    background-color: transparent; /* Supprime le fond */
+}
+
+/* Icône de navigation gauche */
+.carousel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='15,0 0,20 15,40' fill='%23e5e5e5'/%3E%3C/svg%3E");
+    width: 15px;  /* Largeur */
+    height: 40px; /* Hauteur */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 100px; /* Positionnement à 100px du bord gauche */
+    transform: translateY(-50%);
+}
+
+/* Icône de navigation droite */
+.carousel::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 15,20 0,40' fill='%23e5e5e5'/%3E%3C/svg%3E");
+    width: 15px;  /* Largeur */
+    height: 40px; /* Hauteur */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    right: 100px; /* Positionnement à 100px du bord droit */
+    transform: translateY(-50%);
+}
+
+
+/* Cacher les textes des boutons de navigation */
+.carousel__navigation-button {
+    font-size: 0; /* Masque le texte */
+}
+
+/* Cacher les liens de navigation dans chaque slide */
+.carousel__prev,
+.carousel__next {
+    font-size: 0; /* Supprime le texte */
+    text-indent: -9999px; /* Cache visuellement le texte */
+}
+
+/* Supprimer les numéros qui s'affichent sur les slides */
+.carousel__slide::before {
+    content: none; /* Supprime les numéros */
+}
