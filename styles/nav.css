@@ -6,7 +6,7 @@ header {
 }
 
 .logo {
-    margin: 10px 0 10px 100px;   
+    margin: 10px 0 10px 0px;   
 }
 
 .logo a {
@@ -45,7 +45,7 @@ ul {
     font-size: 14px;
     font-weight: lighter;
     list-style-type: none;
-    margin: 25px 150px 0 0;
+    margin: 25px 100px 0 0;
     padding: 0;
     overflow: hidden;
   }
