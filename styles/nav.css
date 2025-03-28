@@ -113,6 +113,9 @@ button .dopdown {
   }
 
   .dropdown .dropbtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
     font-size: inherit;  
     border: none;
     outline: none;
