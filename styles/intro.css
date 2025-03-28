@@ -6,11 +6,11 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url('../images/intro/intro07.jpg');
+            background-image: url('../images/intro/intro03.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: 100;
+            z-index: 2000;
         
             /* Modifié ici ↓ */
             animation: fadeOut 1s ease-in-out 4.8s forwards;

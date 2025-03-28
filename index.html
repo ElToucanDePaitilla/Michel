@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta Viewport & Charset -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
 
-    <!--Balises title et canonical-->
-    <title>Michel Haury | Photographe professionnel</title>
-    <link rel="canonical" href="https://eltoucandepaitilla.github.io/nina-carducci-dev/" />
+  <title>Michel Haury | Photographe professionnel</title>
+  <link rel="canonical" href="https://eltoucandepaitilla.github.io/nina-carducci-dev/" />
 
-    <!--Meta description et keywords-->
-    <meta name="description" content="XXXXXXXXXXXXXX" />
-    <meta name="keywords" content="XXXXXXXXXXXXXX" />
+  <meta name="description" content="XXXXXXXXXXXXXX" />
+  <meta name="keywords" content="XXXXXXXXXXXXXX" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="XXXXXXXXXXXXXX" />
-    <meta property="og:description" content="XXXXXXXXXXXXXX" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://eltoucandepaitilla.github.io/XXXXXXXXXXXXXX/" />
-    <meta property="og:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/XXXXXXXXXXXXXX.webp" />
+  <meta property="og:title" content="XXXXXXXXXXXXXX" />
+  <meta property="og:description" content="XXXXXXXXXXXXXX" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eltoucandepaitilla.github.io/XXXXXXXXXXXXXX/" />
+  <meta property="og:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/XXXXXXXXXXXXXX.webp" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ninacarducci" />
-    <meta name="twitter:title" content="XXXXXXXXXXXXXX" />
-    <meta name="twitter:description" content="XXXXXXXXXXXXXX" />
-    <meta name="twitter:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/nina-carducci-photographe-bordeaux-preview.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ninacarducci" />
+  <meta name="twitter:title" content="XXXXXXXXXXXXXX" />
+  <meta name="twitter:description" content="XXXXXXXXXXXXXX" />
+  <meta name="twitter:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/nina-carducci-photographe-bordeaux-preview.webp" />
 
-    <!-- Favicons -->
-    <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="./assets/images/favicons/apple-touch-icon.png" />
+  <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="./assets/images/favicons/apple-touch-icon.png" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/init.css" /> 
-    <link rel="stylesheet" href="styles/intro.css" />
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/nav.css" />
-    <link rel="stylesheet" href="styles/carousel.css" />
-    <link rel="stylesheet" href="styles/app.css" />
-    <link rel="stylesheet" href="styles/a-propos.css">
-    <link rel="stylesheet" href="styles/contact.css">
-    
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/styles.css"/>
 
-    <!-- Styles intégrés pour la démonstration -->
-    
+
+  <!-- SwiperJS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- PhotoSwipe -->
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" />
+  <script type="module">
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery-swiper',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js'),
+    });
+
+    lightbox.init();
+  </script>
+
 </head>
-<body>
+
+<body class="accueil">
 
     <div class="fullscreen-bg"><!--Intro-->
         <div class="titre-intro">
@@ -59,150 +63,103 @@
         </div>
     </div>   
 
-    <header>
-      <div class="logo"><a href="index.html">
-          <p class="logo-nom">MICHEL HAURY</p>
-          <p class="logo-slogan">PHOTOGRAPHE PROFESSIONNEL</p></a>
-      </div>
-      <div>
+
+      <header>
+        <div class="logo"><a href="index.html">
+            <p class="logo-nom">MICHEL HAURY</p>
+            <p class="logo-slogan">PHOTOGRAPHE PROFESSIONNEL</p></a>
+        </div>
+        <div>
           <ul>
-              <li><a href="#login" id="#login">Login</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="news.html">Actus</a></li>
-              <li>
-                <div class="dropdown">
-                  <button class="dropbtn">Photos                      
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="#">Portraits</a>
-                    <a href="#">Paysages</a>
-                    <a href="#">Nature</a>
-                    <a href="#">Animaux</a>
-                    <a href="#">Ville</a>
-                    <a href="#">Exploration</a>
-                  </div>
-                </div> 
-              </li>
-              <li><a href="a-propos.html">À propos</a></li>
-              <li><a href="accueil.html">Accueil</a></li>
-          </ul>
-      </div>
-  </header>
-    <main>
-<!--        <div id="wrapper">
-            <div id="carousel">
-              <div id="content">
-                <img
-                  class="item"
-                  src="images/diapo01.webp"
-                />
-                <img
-                  src="images/diapo02.webp"
-                  class="item"
-                />
-                <img
-                  src="images/diapo03.webp"
-                  class="item"
-                />
-                <img
-                  src="images/diapo04.webp"
-                  class="item"
-                />
-                <img
-                  src="images/diapo05.webp"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/mH0AFUazs5cUFTMGmXW-yCIhqSgJHbYqt08OjMgON0-x_Q5nsxhOzVwMHyZJ1e3dziP_ja7_=w544-h544-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/H3yFco2fMxBxlQ7wZ7-_OUA8zO8hmqTU9Fik9_lwA6L5pCP_JcCI0OR2XmdAUPzZS_XsayPDnw=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/URcwKIhfH3rPoeSfAKfsuKTwZzyNUv_f9TiLL3Nddscv-cufGX3kh6G8FzkJHzvgWrxKMu_Y36A=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/BkARURW3Om0LVqlubLu1ziGrfKJrkYpSLEQflgH29lmTooSvXQjsHaWnwH1srAPlIMyJKjWqFIU=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/JMSMnpSyPX1ZTgodYRg5y98ZeZ5AUMBKf2TMRXD88_i6Qkj6-CwfkqmE0X4THMIPVydnYBNVUg=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  class="item"
-                  src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/e2WxnnYi-F9oN4e0HdLosbq8nlxezfIlxAze2Ba0zE2JR8Es7j-4tNtXc9atwL51FHpaTMtDgmc=w544-h544-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/u6ldIRFJNC856cVGIRsj8It7kz8_0WSTsbdJEOdwjkzZg0lLnn2fFFdhdkCf85HG9O0s2Ak72g=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/nlaN4QEwrQivvVocTsTmksMAaLdiOYRI6fqWgEvr8HeszJdwyOLWSMtVZQkFP_jIO47g-sbZ=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/ivQK-VEDrumpUKopbgrZKKIP70_i0B0r1LLa7PM1ugqtWJcGDRt8yxndLAVKZn3k5djl6_SS2w=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/mH0AFUazs5cUFTMGmXW-yCIhqSgJHbYqt08OjMgON0-x_Q5nsxhOzVwMHyZJ1e3dziP_ja7_=w544-h544-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/H3yFco2fMxBxlQ7wZ7-_OUA8zO8hmqTU9Fik9_lwA6L5pCP_JcCI0OR2XmdAUPzZS_XsayPDnw=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/URcwKIhfH3rPoeSfAKfsuKTwZzyNUv_f9TiLL3Nddscv-cufGX3kh6G8FzkJHzvgWrxKMu_Y36A=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/BkARURW3Om0LVqlubLu1ziGrfKJrkYpSLEQflgH29lmTooSvXQjsHaWnwH1srAPlIMyJKjWqFIU=w512-h512-l90-rj"
-                  class="item"
-                />
-                <img
-                  src="https://lh3.googleusercontent.com/JMSMnpSyPX1ZTgodYRg5y98ZeZ5AUMBKf2TMRXD88_i6Qkj6-CwfkqmE0X4THMIPVydnYBNVUg=w512-h512-l90-rj"
-                  class="item"
-                />
+            <li><a href="#login">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="actus.html">Actus</a></li>
+            <li><a href="expos.html">Expos</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn">Photos</button>
+                <div class="dropdown-content">
+                  <a href="#">Portraits</a>
+                  <a href="paysages.html">Paysages</a>
+                  <a href="#">Nature</a>
+                  <a href="#">Animaux</a>
+                  <a href="#">Ville</a>
+                  <a href="#">Exploration</a>
+                </div>
               </div>
-            </div>
-            <button id="prev">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path fill="none" d="M0 0h24v24H0V0z" />
-                <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-              </svg>
-            </button>
-            <button id="next">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path fill="none" d="M0 0h24v24H0V0z" />
-                <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-              </svg>
-            </button>
-          </div>
-
-          -->
-
-          </main>
-     <footer>
-    </footer>
-<script src="app.js"></script>
-</body>
-</html>
+            </li>
+            <li><a href="a-propos.html">À propos</a></li>
+          </ul>
+        </div>
+      </header>
+    
+      <main class="a-propos">
+        <div>
+            <p class="citation première-citation">
+                "L'art est la vision de ce qui est invisible."<span class="auteur">&nbsp&nbsp&nbspJoseph Beuys</span>
+            </p>
+            <br>
+        </div>
+        <div>
+            <p>
+                Michel Haury a découvert sa vocation dès l'âge de 10 ans lorsqu'il reçut son premier appareil photo. Dés lors, passionné, il n'a cessé d'explorer l'art de la photographie. Originaire de Limoges, capitale du Limousin, il puise son inspiration dans l'histoire et le patrimoine de cette région. Les paysages de la Creuse et de la Haute-Vienne sont au cœur de son travail, mais il sait aussi s'attaquer à des sujets aussi variés que les portraits, la faune, la flore ou des créations plus artistiques et surréalistes.            </p>
+            <p>
+                Ce qui le distingue, c’est sa capacité à allier réalisme et créativité artistique. Il sait voir ce que l'œil ordinaire ne perçoit pas, offrant une vision unique de son environnement et de notre époque moderne. Chaque image devient une invitation à la réflexion, une mise en lumière de la beauté qui nous entoure.
+            </p>
+            <p>
+                Il ne se contente pas de photographier des instants de vie, il cherche à créer une connexion émotionnelle avec son public. À travers ses clichés, il fait le lien entre tradition et modernité, et nous invite à découvrir le monde sous un angle plus poétique et intime.            </p>
+            </p>
+        </div>
+        <div>
+            <br>
+            <p class="citation">
+                "On ne voit bien qu’avec le cœur. L’essentiel est invisible pour les yeux."<span class="auteur">&nbsp&nbsp&nbspAntoine de Saint-Exupéry</span>
+            </p>
+        </div>    
+       
+    </main>    
+    
+      <footer></footer>
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const swiperWrapper = document.querySelector('.swiper-wrapper');
+          swiperWrapper.id = 'gallery-swiper'; // Ajout pour PhotoSwipe
+    
+          for (let i = 1; i <= 50; i++) {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide';
+    
+            const num = String(i).padStart(3, '0');
+            const img = document.createElement('img');
+            img.src = `images/paysages/paysage-${num}.webp`;
+            img.alt = `Paysage ${i}`;
+            img.loading = 'lazy';
+    
+            const link = document.createElement('a');
+            link.href = `images/paysages/paysage-${num}.webp`;
+            link.dataset.pswpWidth = 1600;  // À adapter selon taille réelle
+            link.dataset.pswpHeight = 1067;
+            link.appendChild(img);
+    
+            slide.appendChild(link);
+            swiperWrapper.appendChild(slide);
+          }
+    
+          const swiper = new Swiper('.swiper', {
+            loop: false,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              type: 'fraction',
+            },
+            lazy: true,
+          });
+        });
+      </script>
+    </body>
+    </html>
+    

@@ -1,5 +1,4 @@
 .a-propos {
-    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
@@ -12,8 +11,13 @@
     text-align: justify;
 }
 
+
+.première-citation {
+    margin-top: 150px;
+}
+
 .citation {
-    text-align: center !important;
+    text-align: left !important;
     font-style: italic;
     font-weight: bold;
     font-size: 24px;
@@ -22,8 +26,4 @@
 .auteur {
     font-size: 22px;
     font-style: normal;
-}
-
-body {
-    background-color: white !important;
 }

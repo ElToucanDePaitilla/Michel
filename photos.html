@@ -1,85 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta Viewport & Charset -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
 
-    <!--Balises title et canonical-->
-    <title>Michel Haury | Photographe professionnel</title>
-    <link rel="canonical" href="https://eltoucandepaitilla.github.io/nina-carducci-dev/" />
+  <title>Michel Haury | Photographe professionnel</title>
+  <link rel="canonical" href="https://eltoucandepaitilla.github.io/nina-carducci-dev/" />
 
-    <!--Meta description et keywords-->
-    <meta name="description" content="XXXXXXXXXXXXXX" />
-    <meta name="keywords" content="XXXXXXXXXXXXXX" />
+  <meta name="description" content="XXXXXXXXXXXXXX" />
+  <meta name="keywords" content="XXXXXXXXXXXXXX" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="XXXXXXXXXXXXXX" />
-    <meta property="og:description" content="XXXXXXXXXXXXXX" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://eltoucandepaitilla.github.io/XXXXXXXXXXXXXX/" />
-    <meta property="og:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/XXXXXXXXXXXXXX.webp" />
+  <meta property="og:title" content="XXXXXXXXXXXXXX" />
+  <meta property="og:description" content="XXXXXXXXXXXXXX" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eltoucandepaitilla.github.io/XXXXXXXXXXXXXX/" />
+  <meta property="og:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/XXXXXXXXXXXXXX.webp" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ninacarducci" />
-    <meta name="twitter:title" content="XXXXXXXXXXXXXX" />
-    <meta name="twitter:description" content="XXXXXXXXXXXXXX" />
-    <meta name="twitter:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/nina-carducci-photographe-bordeaux-preview.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ninacarducci" />
+  <meta name="twitter:title" content="XXXXXXXXXXXXXX" />
+  <meta name="twitter:description" content="XXXXXXXXXXXXXX" />
+  <meta name="twitter:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/nina-carducci-photographe-bordeaux-preview.webp" />
 
-    <!-- Favicons -->
-    <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="./assets/images/favicons/apple-touch-icon.png" />
+  <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="./assets/images/favicons/apple-touch-icon.png" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/init.css" /> 
-    <link rel="stylesheet" href="styles/intro.css" />
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/nav.css" />
-    <link rel="stylesheet" href="styles/carousel.css" />
-    <link rel="stylesheet" href="styles/app.css" />
-    <link rel="stylesheet" href="styles/a-propos.css">
-    <link rel="stylesheet" href="styles/contact.css">
-    
+ <!-- Stylesheets -->
+ <link rel="stylesheet" href="styles/styles.css"/>
+ 
+  <!-- SwiperJS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Styles intégrés pour la démonstration -->
-    
+  <!-- PhotoSwipe -->
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" />
+  <script type="module">
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery-swiper',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js'),
+    });
+
+    lightbox.init();
+  </script>
+
 </head>
-<body>
-    <header>
+
+<body class="accueil">
+
+      <header>
         <div class="logo"><a href="index.html">
             <p class="logo-nom">MICHEL HAURY</p>
             <p class="logo-slogan">PHOTOGRAPHE PROFESSIONNEL</p></a>
         </div>
         <div>
-            <ul>
-                <li><a href="#login">Login</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="news.html">Actus</a></li>
-                <li>
-                  <div class="dropdown">
-                    <button class="dropbtn">Photos                      
-                    </button>
-                    <div class="dropdown-content">
-                      <a href="#">Portraits</a>
-                      <a href="#">Paysages</a>
-                      <a href="#">Nature</a>
-                      <a href="#">Animaux</a>
-                      <a href="#">Ville</a>
-                      <a href="#">Exploration</a>
-                    </div>
-                  </div> 
-                </li>
-                <li><a href="a-propos.html">À propos</a></li>
-                <li><a href="accueil.html">Accueil</a></li>
-            </ul>
+          <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="actus.html">Actus</a></li>
+            <li><a href="expos.html">Expos</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn">Photos</button>
+                <div class="dropdown-content">
+                  <a href="#">Portraits</a>
+                  <a href="paysages.html">Paysages</a>
+                  <a href="#">Nature</a>
+                  <a href="#">Animaux</a>
+                  <a href="#">Ville</a>
+                  <a href="#">Exploration</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="a-propos.html">À propos</a></li>
+            
+          </ul>
         </div>
-    </header>
+      </header>
     <main>
       
 

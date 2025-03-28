@@ -1,4 +1,8 @@
 /* Centrage horizontal de tous les éléments dans main */
+.chapeau {
+    margin-top: 100px;
+}
+
 .h-center {
     display: flex;
     flex-direction: column;
