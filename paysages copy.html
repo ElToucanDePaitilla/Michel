@@ -70,13 +70,12 @@
               <div class="dropdown">
                 <button class="dropbtn">Photos</button>
                 <div class="dropdown-content">
+                  <a href="#">Portraits</a>
                   <a href="paysages.html">Paysages</a>
-                  <a href="#">Faune</a>
-                  <a href="#">Flore</a>
                   <a href="#">Nature</a>
-                  <a href="#">Creuse</a>
-                  <a href="#">Portrait</a>
-                  <a href="#">Nuit</a>
+                  <a href="#">Animaux</a>
+                  <a href="#">Ville</a>
+                  <a href="#">Exploration</a>
                 </div>
               </div>
             </li>
@@ -85,23 +84,75 @@
           </ul>
         </div>
       </header>
+
+      <main class="accueil-main">
+        <div class="swiper" id="gallery-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides générées dynamiquement -->
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
       
-    <main class="actus">
-        <section>
-            <h2>C'est en ce moment !</h2>
-            <div class="cartes-container">
-                
-            </div>
-        </section>
-        
-    </main>
-    
-    </body>
+        <!-- Affichage dynamique du nom de fichier -->
+        <div id="filename-display" style="text-align: center; margin-top: 1rem; font-family: 'EB Garamond', serif; font-size: 1.2rem;">
+          <!-- contenu initialisé par JS -->
+        </div>
+      </main>
+      
 
-    </main>
+  <footer></footer>
 
-    <footer>
-    </footer>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const swiperWrapper = document.querySelector('.swiper-wrapper');
+      const filenameDisplay = document.getElementById('filename-display');
+  
+      for (let i = 1; i <= 250; i++) {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+  
+        const num = String(i).padStart(3, '0');
+        const img = document.createElement('img');
+        img.src = `images/paysages/paysage-${num}.webp`;
+        img.alt = `Paysage ${i}`;
+        img.loading = 'lazy';
+  
+        const link = document.createElement('a');
+        link.href = `images/paysages/paysage-${num}.webp`;
+        link.dataset.pswpWidth = 1600;
+        link.dataset.pswpHeight = 1067;
+        link.appendChild(img);
+  
+        slide.appendChild(link);
+        swiperWrapper.appendChild(slide);
+      }
+  
+      const swiper = new Swiper('.swiper', {
+        loop: false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: false,
+        lazy: true,
+        on: {
+          init: function () {
+            const fileName = `paysage-${String(this.realIndex + 1).padStart(3, '0')}.webp`;
+            filenameDisplay.textContent = fileName;
+          },
+          slideChange: function () {
+            const fileName = `paysage-${String(this.realIndex + 1).padStart(3, '0')}.webp`;
+            filenameDisplay.textContent = fileName;
+          }
+        }
+      });
+  
+      // Démarre Swiper
+      swiper.init();
+    });
+  </script>
+  
+  
 </body>
 </html>
