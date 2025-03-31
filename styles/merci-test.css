@@ -1,0 +1,50 @@
+.fullscreen-bg-merci {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/paysages/intro05.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2000;
+
+    /* Modifié ici ↓ */
+    animation: fadeOut 1s ease-in-out 4.8s forwards;
+}
+
+.fullscreen-bg-merci h1 {
+    font-size: 50px;
+}
+
+.fullscreen-bg-merci p {
+    font-size: 30px;
+}
+
+  /* Texte centré avec animation */
+  .titre-merci {
+    text-align: center;
+    color: white;
+    font-family: "EB Garamond", serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 0px 50px 20px 50px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0.3s forwards;
+}
+
+
+.titre-merci h1 {
+    letter-spacing: 5px;
+    font-size: 35px;
+}
+
+.titre-merci p {
+    letter-spacing: 5px;
+    font-size: 25px;
+}
