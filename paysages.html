@@ -71,12 +71,13 @@
                 <button class="dropbtn">Photos</button>
                 <div class="dropdown-content">
                   <a href="paysages.html">Paysages</a>
-                  <a href="#">Faune</a>
-                  <a href="#">Flore</a>
-                  <a href="#">Nature</a>
-                  <a href="#">Creuse</a>
-                  <a href="#">Portraits</a>
-                  <a href="#">Nuit</a>
+                  <a href="faune.html">Faune</a>
+                  <a href="flore.html">Flore</a>
+                  <a href="nature.html">Nature</a>
+                  <a href="creuse.html">Creuse</a>
+                  <a href="portraits.html">Portraits</a>
+                  <a href="nuit.html">Nuit</a>
+                  <a href="limoges.html">Limoges</a>
                 </div>
               </div>
             </li>
@@ -99,45 +100,45 @@
 
   <footer></footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const swiperWrapper = document.querySelector('.swiper-wrapper');
-      swiperWrapper.id = 'gallery-swiper'; // Ajout pour PhotoSwipe
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+  swiperWrapper.id = 'gallery-swiper'; // Ajout pour PhotoSwipe
 
-      for (let i = 1; i <= 250; i++) {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
+  for (let i = 1; i <= 18; i++) { // Tu as 18 images visibles sur ta capture
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
 
-        const num = String(i).padStart(3, '0');
-        const img = document.createElement('img');
-        img.src = `images/paysages/paysage-${num}.webp`;
-        img.alt = `Paysage ${i}`;
-        img.loading = 'lazy';
+    const img = document.createElement('img');
+    img.src = `images/photos-diapos/paysages/Michel Haury@photographie-paysage (${i}).jpg`;
+    img.alt = `Paysage ${i}`;
+    img.loading = 'lazy';
 
-        const link = document.createElement('a');
-        link.href = `images/paysages/paysage-${num}.webp`;
-        link.dataset.pswpWidth = 1600;  // À adapter selon taille réelle
-        link.dataset.pswpHeight = 1067;
-        link.appendChild(img);
+    const link = document.createElement('a');
+    link.href = `images/photos-diapos/paysage/Michel Haury@photographie-paysage (${i}).jpg`;
+    link.dataset.pswpWidth = 1600;  // À ajuster si besoin
+    link.dataset.pswpHeight = 1067;
+    link.appendChild(img);
 
-        slide.appendChild(link);
-        swiperWrapper.appendChild(slide);
-      }
+    slide.appendChild(link);
+    swiperWrapper.appendChild(slide);
+  }
 
-      const swiper = new Swiper('.swiper', {
-        loop: false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction',
-        },
-        lazy: true,
-      });
-    });
-  </script>
+  const swiper = new Swiper('.swiper', {
+    loop: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    lazy: true,
+  });
+});
+</script>
+
 
 
 <script>

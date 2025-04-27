@@ -6,42 +6,81 @@ body {
 }
 
 .accueil-main {
-  margin-top: 80px; /* espace sous le header */
-  height: calc(100vh - 80px); /* zone dispo sous le header */
+  margin-top: 80px;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .swiper {
-  width: 100%;
-  max-width: 1000px;
+  width: auto;
   height: 90%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.swiper-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .swiper-slide {
+  width: auto;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #111;
+}
+
+.swiper-slide a {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .swiper-slide img {
-  width: 100%;
   height: 100%;
+  width: auto;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  border-radius: 0px;
+  background-color: #000; /* Noir sous les images */
 }
 
+/* Placement ABSOLU des flèches */
 .swiper-button-next,
 .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
   color: #ffffff !important;
+}
+
+.swiper-button-next {
+  right: -40px; /* À ajuster selon esthétique */
+}
+
+.swiper-button-prev {
+  left: -40px; /* À ajuster selon esthétique */
 }
 
 .swiper-pagination {
   color: #ffffff !important;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: light;
+  font-weight: lighter;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
+
+
+

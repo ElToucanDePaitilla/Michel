@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+  <title>Michel Haury | Photographe professionnel</title>
+  <link rel="canonical" href="https://eltoucandepaitilla.github.io/nina-carducci-dev/" />
+
+  <meta name="description" content="XXXXXXXXXXXXXX" />
+  <meta name="keywords" content="XXXXXXXXXXXXXX" />
+
+  <meta property="og:title" content="XXXXXXXXXXXXXX" />
+  <meta property="og:description" content="XXXXXXXXXXXXXX" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eltoucandepaitilla.github.io/XXXXXXXXXXXXXX/" />
+  <meta property="og:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/XXXXXXXXXXXXXX.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ninacarducci" />
+  <meta name="twitter:title" content="XXXXXXXXXXXXXX" />
+  <meta name="twitter:description" content="XXXXXXXXXXXXXX" />
+  <meta name="twitter:image" content="https://eltoucandepaitilla.github.io/nina-carducci-dev/assets/images/previews/nina-carducci-photographe-bordeaux-preview.webp" />
+
+  <link rel="icon" href="./assets/images/favicons/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="./assets/images/favicons/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+ <!-- Stylesheets -->
+ <link rel="stylesheet" href="styles/styles.css"/>
+
+  <!-- SwiperJS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- PhotoSwipe -->
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" />
+  <script type="module">
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery-swiper',
+      children: 'a',
+      pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js'),
+    });
+
+    lightbox.init();
+  </script>
+
+</head>
+
+<body class="accueil">
+
+      <header>
+        <div class="logo"><a href="index.html">
+            <p class="logo-nom">MICHEL HAURY</p>
+            <p class="logo-slogan">PHOTOGRAPHE PROFESSIONNEL</p></a>
+        </div>
+        <div>
+          <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="actus.html">Actus</a></li>
+            <li><a href="expos.html">Expos</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn">Photos</button>
+                <div class="dropdown-content">
+                  <a href="paysages.html">Paysages</a>
+                  <a href="faune.html">Faune</a>
+                  <a href="flore.html">Flore</a>
+                  <a href="nature.html">Nature</a>
+                  <a href="natures-mortes.html">Natures mortes</a>
+                  <a href="creuse.html">Creuse</a>
+                  <a href="portraits.html">Portraits</a>
+                  <a href="nuit.html">Nuit</a>
+                  <a href="limoges.html">Limoges</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="a-propos.html">À propos</a></li>
+            
+          </ul>
+        </div>
+      </header>
+
+  <main class="accueil-main">
+    <div class="swiper" id="gallery-swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides générées dynamiquement -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+  swiperWrapper.id = 'gallery-swiper'; // Ajout pour PhotoSwipe
+
+  let i = 1;
+
+  function loadImage() {
+    const img = new Image();
+    img.src = `images/photos-diapos/natures-mortes/Michel Haury@photographie-nature morte (${i}).jpg`;
+
+    img.onload = function () {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+
+      const link = document.createElement('a');
+      link.href = img.src;
+
+      // Récupérer dimensions pour PhotoSwipe
+      link.dataset.pswpWidth = img.naturalWidth;
+      link.dataset.pswpHeight = img.naturalHeight;
+
+      img.alt = `Creuse ${i}`;
+      img.loading = 'lazy';
+
+      link.appendChild(img);
+      slide.appendChild(link);
+      swiperWrapper.appendChild(slide);
+
+      i++;
+      loadImage(); // Charger la prochaine image
+    };
+
+    img.onerror = function () {
+      initializeSwiper(); // Si l'image n'existe pas, on initialise le Swiper
+    };
+  }
+
+  function initializeSwiper() {
+    const swiper = new Swiper('.swiper', {
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      lazy: true,
+    });
+  }
+
+  loadImage(); // Démarre le chargement
+});
+</script>
+
+  
+    
+
+
+<script>
+  // Empêcher le clic droit partout
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+
+  // Empêcher le glisser-déposer d’images
+  document.addEventListener("dragstart", function(e) {
+    if (e.target.nodeName === "IMG") {
+      e.preventDefault();
+    }
+  });
+
+  // Optionnel : empêcher la sélection de texte ou d'éléments (renforce un peu)
+  document.addEventListener("selectstart", function(e) {
+    e.preventDefault();
+  });
+</script>
+</body>
+</html>
